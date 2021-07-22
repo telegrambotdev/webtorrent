@@ -11,14 +11,14 @@
 
 <p align="center">
   <a href="https://discord.gg/cnXkm4Z"><img src="https://img.shields.io/discord/612575111718895616" alt="discord"></a>
-  <a href="https://github.com/webtorrent/webtorrent"><img src="https://img.shields.io/github/workflow/status/webtorrent/webtorrent/ci/master" alt="ci"></a>/actions
+  <a href="https://github.com/webtorrent/webtorrent/actions"><img src="https://img.shields.io/github/workflow/status/webtorrent/webtorrent/ci/master" alt="ci"></a>
   <a href="https://www.npmjs.com/package/webtorrent"><img src="https://img.shields.io/npm/v/webtorrent.svg" alt="npm version"></a>
   <a href="https://www.npmjs.com/package/webtorrent"><img src="https://img.shields.io/npm/dm/webtorrent.svg" alt="npm downloads"></a>
   <a href="https://standardjs.com"><img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg" alt="Standard - JavaScript Style Guide"></a>
 </p>
 
 <h5 align="center">
-  Sponsored by&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://brave.com" rel="nofollow"><img src="https://webtorrent.io/img/supporters/brave.png" alt="Brave" height=35 valign="middle"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://webtorrent.io/expressvpn" rel="nofollow"><img src="https://webtorrent.io/img/supporters/expressvpn.png" alt="ExpressVPN" height=30 valign="middle"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.enya.ai/?utm_source=github_webtorrent&utm_medium=web" rel="nofollow"><img src="https://webtorrent.io/img/supporters/enya.png" alt="Enya" height=30 valign="middle"></a>
+  Sponsored by&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://brave.com" rel="nofollow"><img src="https://webtorrent.io/img/supporters/brave.png" alt="Brave" height=35 valign="middle"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.wormhole.app/?utm_medium=sponsorship&utm_source=webtorrent&utm_campaign=feross"><img src="https://webtorrent.io/img/supporters/wormhole.png" alt="Wormhole" height=30 valign="middle"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://webtorrent.io/expressvpn" rel="nofollow"><img src="https://webtorrent.io/img/supporters/expressvpn.png" alt="ExpressVPN" height=30 valign="middle"></a>
 </h5>
 <br>
 
@@ -73,6 +73,7 @@ they can connect to both normal *and* web peers. We hope other clients will foll
   - **[protocol extension api](https://github.com/webtorrent/bittorrent-protocol#extension-api)**
     for adding new extensions
 - **Comprehensive test suite** (runs completely offline, so it's reliable and fast)
+- Check all the **[supported BEPs here](docs/bep_support.md)**
 
 #### Browser/WebRTC environment features
 
@@ -132,10 +133,10 @@ standards (no plugins, just HTML5 and WebRTC)! It's easy to get started!
 ##### Downloading a file is simple:
 
 ```js
-var WebTorrent = require('webtorrent')
+const WebTorrent = require('webtorrent')
 
-var client = new WebTorrent()
-var magnetURI = '...'
+const client = new WebTorrent()
+const magnetURI = '...'
 
 client.add(magnetURI, function (torrent) {
   // Got torrent metadata!
@@ -152,10 +153,10 @@ client.add(magnetURI, function (torrent) {
 ##### Seeding a file is simple, too:
 
 ```js
-var dragDrop = require('drag-drop')
-var WebTorrent = require('webtorrent')
+const dragDrop = require('drag-drop')
+const WebTorrent = require('webtorrent')
 
-var client = new WebTorrent()
+const client = new WebTorrent()
 
 // When user drops files on the browser, create a new torrent and start seeding it!
 dragDrop('body', function (files) {
